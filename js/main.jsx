@@ -1,8 +1,13 @@
 import Chessboard from "chessboardjsx";
+import "bootstrap";
 
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Chess = require('chess.js');
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles.css"
+
 
 const ruy_lopez = [
   'e4', 'e5', 'Nf3', 'Nc6', 'Bb5',
@@ -28,9 +33,28 @@ class MyBoard extends React.Component {
     }, 1000);
   }
   render() {
-    return (<Chessboard
-      position={this.state.fen}
-    />);
+    return (<div className="wrapper">
+      <nav id="sidebar">
+        <div className="sidebar-header">
+            <h3>S2 Chess</h3>
+        </div>
+        <ul className="list-unstyled components">
+            <li>
+                <a href="#">Openings</a>
+            </li>
+            <li>
+                <a href="#">Patterns</a>
+            </li>
+        </ul>
+      </nav>
+
+      <div className="container-fluid" id="content">
+        <h1>Openings - Ruy Lopez</h1>
+        <Chessboard
+          position={this.state.fen}
+        />
+      </div>
+    </div>);
   }
 }
 
