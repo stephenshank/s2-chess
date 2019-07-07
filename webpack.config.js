@@ -2,7 +2,7 @@ const path = require("path"),
   HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve("js", "main.jsx"),
+  entry: path.resolve("frontend", "main.jsx"),
   plugins: [
     new HtmlWebpackPlugin({
       title: "Chess"
@@ -31,6 +31,10 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
-    historyApiFallback: true
+    historyApiFallback: true,
+    proxy: {
+      '/api': 'http://localhost:8000',
+      changeOrigin: true
+    }
   }
 };

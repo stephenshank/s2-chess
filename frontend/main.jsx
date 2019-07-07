@@ -4,6 +4,7 @@ import "bootstrap";
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Chess = require('chess.js');
+const axios = require('axios');
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css"
@@ -18,7 +19,10 @@ class MyBoard extends React.Component {
   constructor(props) {
     super(props);
     this.chess = new Chess();
-    this.state = { fen: this.chess.fen() };
+    this.state = {
+      fen: this.chess.fen(),
+      error: false
+    };
     this.i = 0;
   }
   componentDidMount() {
@@ -31,19 +35,29 @@ class MyBoard extends React.Component {
       }
       this.setState({ fen: this.chess.fen() });
     }, 1000);
+    axios.get('/api')
+      .catch(error => {
+        this.setState({
+          error: true
+        });
+      });
   }
   render() {
+    const { error } = this.state;
     return (<div className="wrapper">
       <nav id="sidebar">
         <div className="sidebar-header">
-            <h3>S2 Chess</h3>
+            <h3>{error ? "" : "S2 Chess"}</h3>
         </div>
         <ul className="list-unstyled components">
             <li>
                 <a href="#">Openings</a>
             </li>
             <li>
-                <a href="#">Patterns</a>
+                <a href="#">Tactics</a>
+            </li>
+            <li>
+                <a href="#">Games</a>
             </li>
         </ul>
       </nav>
@@ -51,6 +65,7 @@ class MyBoard extends React.Component {
       <div className="container-fluid" id="content">
         <h1>Openings - Ruy Lopez</h1>
         <Chessboard
+          width={500}
           position={this.state.fen}
         />
       </div>

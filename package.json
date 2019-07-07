@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "develop": "npx webpack-dev-server --mode=development --open"
+    "frontend": "npx webpack-dev-server --mode=development --open",
+    "api": "python api/manage.py runserver"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "chess.js": "^0.10.2",
     "chessboardjsx": "^2.3.0",
