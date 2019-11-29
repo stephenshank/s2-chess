@@ -21,7 +21,7 @@ yarn
 
 #### API
 
-With the s2-chess conda environment active,
+With the `s2-chess` conda environment active,
 
 ```
 yarn api
