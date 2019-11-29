@@ -2,7 +2,7 @@ const path = require("path"),
   HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve("frontend", "main.jsx"),
+  entry: path.resolve("frontend", "app.jsx"),
   plugins: [
     new HtmlWebpackPlugin({
       title: "Chess"
