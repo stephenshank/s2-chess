@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
 import axios from 'axios';
 
 import Home from "./home.jsx";
@@ -37,11 +38,11 @@ function App () {
         </ul>
       </nav>
 
-      <div className="container-fluid" id="content">
+      <Container>
         <Route exact path="/" component={Home} />
         <Route path="/openings" component={Openings} />
         <Route path="/engine" component={Engine} />
-      </div>
+      </Container>
     </div>
   </BrowserRouter>);
 }
