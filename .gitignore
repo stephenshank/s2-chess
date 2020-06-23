@@ -3,3 +3,4 @@ tags*
 api/db.sqlite3
 *.pyc
 __pycache__
+s2chess-env
