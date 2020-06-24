@@ -30,7 +30,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, "dist"),
     historyApiFallback: true,
     proxy: {
-      '/api': 'http://localhost:8000',
+      '/api': 'http://localhost:8100',
       changeOrigin: true
     }
   }

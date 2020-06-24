@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "frontend": "npx webpack-dev-server --mode=development --open",
-    "api": "python api/manage.py runserver"
+    "api": "python api/manage.py runserver 8100"
   },
   "keywords": [],
   "author": "",
