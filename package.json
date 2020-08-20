@@ -15,7 +15,7 @@
     "bootstrap": "^4.3.1",
     "chess.js": "^0.10.2",
     "chessboardjsx": "^2.3.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.14.7",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.16",
